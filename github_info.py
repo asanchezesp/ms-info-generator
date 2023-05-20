@@ -37,10 +37,12 @@ class GithubInfo:
         for request in enpoints:
             info = {}
             method = re.search(r'@(\w+)Mapping',request).group(1).upper()
-            requestResult = re.search(r'public\s+(.*?)\s',request).group(1)
+            requestResult = re.search(r'public\s(?!interface)+(.*?)\s',request).group(1)
             regex = f"{requestResult}\\s+(.*?);"
             requestFunction = re.search(rf'{regex}',request).group(1)
+            path = re.search(r'@.*Mapping\("([^"]+)"\)',request).group(1)
             info['method'] = method
+            info['path'] = path
             info['result'] = requestResult
             info['function'] = requestFunction
             detailed.append(info)
