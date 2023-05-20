@@ -3,10 +3,6 @@ import re
 
 class GithubInfo:
 
-    __g = None
-    __main_repo_name = None
-    __path = None
-
     def __init__(self,token,main_repo_name,path):
         self.__g = Github(token)
         self.__main_repo_name = main_repo_name
