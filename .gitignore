@@ -5,7 +5,8 @@
 
 #Quita el fichero de pruebas
 prueba.py
-
+.DS_Store
+microservices.xlsx
 # User-specific files
 *.rsuser
 *.suo
